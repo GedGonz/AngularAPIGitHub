@@ -1,0 +1,11 @@
+body{
+    color:white;
+}
+.repo-language-color {
+    border-radius: 50%;
+    display: inline-block;
+    height: 12px;
+    position: relative;
+    top: 1px;
+    width: 12px;
+}
