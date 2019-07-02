@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RepositoriosService } from 'src/app/services/repositorios.service';
 import { Owner } from 'src/app/model/Owner';
 
@@ -8,24 +8,26 @@ import { Owner } from 'src/app/model/Owner';
   styleUrls: ['./owner.component.css']
 })
 export class OwnerComponent implements OnInit {
+  @Input()
+  owner: Owner;
 
-  owner: Owner = new Owner();
-  
+
   constructor(private servicioRepo: RepositoriosService) {
-    this.servicioRepo.getOwner()
-    .subscribe((resp: Owner)=> this.owner = {
-    login: resp['login'],
-    name: resp['name'],
-    avatar_url: resp['avatar_url'],
-    location: resp['location'],
-    created_at: resp['created_at'],
-    updated_at: resp['updated_at']
+   /* this.servicioRepo.getOwner(this.texto)
+    .subscribe((resp: Owner) => this.owner = {
+    login: resp.login,
+    name: resp.name,
+    avatar_url: resp.avatar_url,
+    location: resp.location,
+    created_at: resp.created_at,
+    updated_at: resp.updated_at
    });
-
+    console.log(this.owner);
+    */
    }
 
   ngOnInit() {
-
+    // this.owner = new Owner();
   }
 
 }
