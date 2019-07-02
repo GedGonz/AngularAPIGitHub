@@ -1,16 +1,17 @@
-
-   <div class="row ml-1 mr-1">
-        <div class="col-md-12">
-         <app-owner></app-owner>
-        </div>
+<div class="row ml-1 mr-1 mt-5">
+    <div class="col-md-8 offset-2">
+        <app-find (owner)="Ownerrecibido = $event" (repositories)="Repositoryrecibido = $event"></app-find>
     </div>
+</div>
 
-    <div class="row ml-1 mr-1">
-        <div class="col-md-12">
-             <app-card></app-card>
-        </div>
+<!--(textoescrito)="textorecibido = $event"-->
+<div class="row ml-1 mr-1">
+    <div class="col-md-12">
+        <app-owner *ngIf="Ownerrecibido" [owner]="Ownerrecibido"></app-owner>
     </div>
-            
-
-
-
+</div>
+<div class="row ml-1 mr-1">
+    <div class="col-md-12">
+        <app-card *ngIf="Repositoryrecibido" [repositories]="Repositoryrecibido"></app-card>
+    </div>
+</div>

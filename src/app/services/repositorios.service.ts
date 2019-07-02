@@ -9,15 +9,16 @@ import { Observable } from 'rxjs';
 })
 export class RepositoriosService {
 
-  constructor(private http: HttpClient) { 
-
+  constructor(private http: HttpClient) {
   }
 
-  getOwner(){
-    return this.http.get<Owner>("https://api.github.com/users/GedGonz");
+  getOwner(name: string): Observable<Owner> {
+    const url = `https://api.github.com/users/${name}`;
+    // console.log('URL: ' + url);
+    return this.http.get<Owner>(url);
   }
-  getRepositorio() {
-    return this.http.get<Repository[]>("https://api.github.com/users/GedGonz/repos");
+  getRepositorio(name: string): Observable<Repository[]> {
+    const url = `https://api.github.com/users/${name}/repos`;
+    return this.http.get<Repository[]>(url);
   }
-  
 }

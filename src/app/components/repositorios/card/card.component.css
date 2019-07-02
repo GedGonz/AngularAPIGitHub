@@ -1,6 +1,7 @@
-body{
-    color:white;
+body {
+    color: white;
 }
+
 .repo-language-color {
     border-radius: 50%;
     display: inline-block;
@@ -8,4 +9,8 @@ body{
     position: relative;
     top: 1px;
     width: 12px;
+}
+
+.card {
+    border-top: 3px solid #17a2b8 !important;
 }
