@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { RepositoriosService } from './services/repositorios.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FindComponent } from './components/repositorios/find/find.component';
+import { NotfoundComponent } from './components/repositorios/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FindComponent } from './components/repositorios/find/find.component';
     OwnerComponent,
     CardComponent,
     HeaderComponent,
-    FindComponent
+    FindComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

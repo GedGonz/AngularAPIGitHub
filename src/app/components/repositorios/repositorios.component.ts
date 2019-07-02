@@ -11,6 +11,8 @@ export class RepositoriosComponent implements OnInit {
 @Input()
 Ownerrecibido: Owner;
 @Input()
+@Input()
+eroor: boolean;
 Repositoryrecibido: Repository;
   constructor() {
 

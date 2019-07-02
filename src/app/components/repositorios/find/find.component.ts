@@ -15,7 +15,8 @@ export class FindComponent implements OnInit {
   constructor(private servicioRepo: RepositoriosService) { }
 
   findControl = new FormControl();
-  eroor = false;
+  @Output()
+  eroor: boolean;
   @Output()
   owner: EventEmitter<Owner> = new EventEmitter<Owner>();
   @Output()
@@ -24,41 +25,50 @@ export class FindComponent implements OnInit {
 
 finRepository(texto) {
   console.log(texto);
-
+try {
   this.servicioRepo.getOwner(texto).pipe(
-        catchError(() => {
-          this.eroor = true;
-          return EMPTY;
-        })).subscribe((resp) => {
-          this.owner.emit(resp);
-          });
+    catchError(() => {
+      this.eroor = true;
+      return EMPTY;
+    })).subscribe((resp) => {
+      this.owner.emit(resp);
+      }, error => {
+        console.error(error);
+    });
 
-  this.servicioRepo.getRepositorio(texto).pipe(
-          catchError(() => {
-            this.eroor = true;
-            return EMPTY;
-          })
-        ).subscribe((resp) => {
-          this.repositories.emit(resp);
-          });
-        /*
-            this.findControl.valueChanges
-      .pipe(filter(value => value.length > 3),
-      debounceTime(1000),
-      switchMap(value =>
-        this.servicioRepo.getRepositorio(value).pipe(
-          catchError(() => {
-            this.owner = null;
-            this.eroor = true;
-            return EMPTY;
-          })
-        ))
-      ).subscribe((resp) => {
-        this.repositories = resp;
-        console.log(this.repositories);
-        });
-        */
-  // this.textoescrito.emit(texto);
+this.servicioRepo.getRepositorio(texto).pipe(
+      catchError(() => {
+        this.eroor = true;
+        return EMPTY;
+      })
+    ).subscribe((resp) => {
+      this.repositories.emit(resp);
+      }, error => {
+        console.error(error);
+    });
+    /*
+        this.findControl.valueChanges
+  .pipe(filter(value => value.length > 3),
+  debounceTime(1000),
+  switchMap(value =>
+    this.servicioRepo.getRepositorio(value).pipe(
+      catchError(() => {
+        this.owner = null;
+        this.eroor = true;
+        return EMPTY;
+      })
+    ))
+  ).subscribe((resp) => {
+    this.repositories = resp;
+    console.log(this.repositories);
+    });
+    */
+// this.textoescrito.emit(texto);
+} catch (error) {
+  console.log("Entra en error");
+  this.eroor = true;
+}
+  
 }
 
 

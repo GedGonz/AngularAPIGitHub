@@ -15,3 +15,8 @@
         <app-card *ngIf="Repositoryrecibido" [repositories]="Repositoryrecibido"></app-card>
     </div>
 </div>
+<div class="row ml-1 mr-1">
+        <div class="col-md-12">
+            <app-notfound  *ngIf="eroor" ></app-notfound>
+        </div>
+</div>
