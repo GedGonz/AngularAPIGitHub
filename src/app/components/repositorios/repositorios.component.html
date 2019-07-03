@@ -1,22 +1,20 @@
 <div class="row ml-1 mr-1 mt-5">
     <div class="col-md-8 offset-2">
-        <app-find (owner)="Ownerrecibido = $event" (repositories)="Repositoryrecibido = $event"></app-find>
-    </div>
-</div>
-
-<!--(textoescrito)="textorecibido = $event"-->
-<div class="row ml-1 mr-1">
-    <div class="col-md-12">
-        <app-owner *ngIf="Ownerrecibido" [owner]="Ownerrecibido"></app-owner>
+        <app-find (eroor)="eroorrecibido = $event" (owner)="Ownerrecibido = $event" (repositories)="Repositoryrecibido = $event"></app-find>
     </div>
 </div>
 <div class="row ml-1 mr-1">
     <div class="col-md-12">
-        <app-card *ngIf="Repositoryrecibido" [repositories]="Repositoryrecibido"></app-card>
+        <app-owner *ngIf="Ownerrecibido && !eroorrecibido" [owner]="Ownerrecibido"></app-owner>
     </div>
 </div>
 <div class="row ml-1 mr-1">
-        <div class="col-md-12">
-            <app-notfound  *ngIf="eroor" ></app-notfound>
+    <div class="col-md-12">
+        <app-card *ngIf="Repositoryrecibido && !eroorrecibido" [repositories]="Repositoryrecibido"></app-card>
+    </div>
+</div>
+<div class="row ml-1 mr-1 mt-5">
+        <div class="col-md-10 offset-1">
+            <app-notfound  *ngIf="eroorrecibido" ></app-notfound>
         </div>
 </div>

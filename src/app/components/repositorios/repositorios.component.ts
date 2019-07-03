@@ -12,7 +12,7 @@ export class RepositoriosComponent implements OnInit {
 Ownerrecibido: Owner;
 @Input()
 @Input()
-eroor: boolean;
+eroorrecibido: boolean;
 Repositoryrecibido: Repository;
   constructor() {
 

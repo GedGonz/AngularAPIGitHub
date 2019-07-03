@@ -3,8 +3,9 @@ import { FormControl } from '@angular/forms';
 import { RepositoriosService } from 'src/app/services/repositorios.service';
 import { Owner } from 'src/app/model/Owner';
 import { Repository } from 'src/app/model/repository';
-import { filter, switchMap, debounceTime, catchError } from 'rxjs/operators';
+import { filter, switchMap, debounceTime, catchError,  } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
+import { HttpErrorResponse } from "@angular/common/http";
 @Component({
   selector: 'app-find',
   templateUrl: './find.component.html',
@@ -16,7 +17,7 @@ export class FindComponent implements OnInit {
 
   findControl = new FormControl();
   @Output()
-  eroor: boolean;
+  eroor: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output()
   owner: EventEmitter<Owner> = new EventEmitter<Owner>();
   @Output()
@@ -26,26 +27,31 @@ export class FindComponent implements OnInit {
 finRepository(texto) {
   console.log(texto);
 try {
-  this.servicioRepo.getOwner(texto).pipe(
-    catchError(() => {
-      this.eroor = true;
-      return EMPTY;
-    })).subscribe((resp) => {
+  this.servicioRepo.getOwner(texto).subscribe((resp) => {
       this.owner.emit(resp);
-      }, error => {
-        console.error(error);
-    });
+      this.eroor.emit(false);
+      },(err: HttpErrorResponse) => {
+        this.eroor.emit(true);
+        if (err.error instanceof Error) {
+          
+          console.log("Client-side error");
+        } else {
+          console.log("Server-side error");
+        }
+      });
 
-this.servicioRepo.getRepositorio(texto).pipe(
-      catchError(() => {
-        this.eroor = true;
-        return EMPTY;
-      })
-    ).subscribe((resp) => {
+this.servicioRepo.getRepositorio(texto).subscribe((resp) => {
       this.repositories.emit(resp);
-      }, error => {
-        console.error(error);
-    });
+      this.eroor.emit(false);
+      },(err: HttpErrorResponse) => {
+        this.eroor.emit(true);
+        if (err.error instanceof Error) {
+         
+          console.log("Client-side error");
+        } else {
+          console.log("Server-side error");
+        }
+      });
     /*
         this.findControl.valueChanges
   .pipe(filter(value => value.length > 3),
@@ -66,13 +72,14 @@ this.servicioRepo.getRepositorio(texto).pipe(
 // this.textoescrito.emit(texto);
 } catch (error) {
   console.log("Entra en error");
-  this.eroor = true;
+
 }
   
 }
 
 
   ngOnInit() {
+
   }
 
 
