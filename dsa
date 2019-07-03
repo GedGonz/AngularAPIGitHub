@@ -1,0 +1,54 @@
+[33mcommit a65e3bcdcbd329148b39527754b8e936d2a7dedc[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: ggonzalez <gedgonz7@gmail.com>
+Date:   Wed Jul 3 16:42:03 2019 -0600
+
+    deploy
+
+[33mcommit d4b505d4b1a745959739ffba916f66d123505a82[m
+Author: ggonzalez <gedgonz7@gmail.com>
+Date:   Wed Jul 3 16:39:20 2019 -0600
+
+    deploy
+
+[33mcommit f6af7bb35e3f46306fb0ded22c0d8b1df51b2acd[m
+Author: ggonzalez <gedgonz7@gmail.com>
+Date:   Wed Jul 3 16:34:02 2019 -0600
+
+    deploy
+
+[33mcommit 8f79a96d4b3217efa323ce530dcaf9ebf4398c4c[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: ggonzalez <gedgonz7@gmail.com>
+Date:   Tue Jul 2 16:39:05 2019 -0600
+
+    cambio de fondo
+
+[33mcommit d4bbafffc4bb6885174a3fd9b11bca2b54f56109[m
+Merge: fbdfc9e 2cb1ca9
+Author: ggonzalez <gedgonz7@gmail.com>
+Date:   Tue Jul 2 14:02:36 2019 -0600
+
+    cambio card y nuevo componente
+
+[33mcommit fbdfc9eceb6dac89e7367193a29c133af92fca1f[m
+Author: ggonzalez <gedgonz7@gmail.com>
+Date:   Tue Jul 2 13:31:57 2019 -0600
+
+    cambio card component
+
+[33mcommit 2cb1ca9dd75681f2e2df6772a85b5329b85cdadd[m
+Author: GedGonz <gedgonz7@gmail.com>
+Date:   Tue Jul 2 00:47:29 2019 -0600
+
+    Se agrego componente de busqueda
+
+[33mcommit cf9496d42992e17af76b83576e73c4ad1be3155f[m
+Author: ggonzalez <gedgonz7@gmail.com>
+Date:   Mon Jul 1 17:47:14 2019 -0600
+
+    Consulta de API
+
+[33mcommit d6c461ed940b6e33ad815f1149abf8d518c02811[m
+Author: ggonzalez <gedgonz7@gmail.com>
+Date:   Mon Jul 1 09:01:38 2019 -0600
+
+    initial commit
