@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RepositoriosService } from 'src/app/services/repositorios.service';
-import { Owner } from 'src/app/model/Owner';
-import { Repository } from 'src/app/model/repository';
+import { Repository } from 'src/app/model/Repository';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',

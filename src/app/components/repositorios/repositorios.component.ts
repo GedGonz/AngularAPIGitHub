@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Owner } from 'src/app/model/Owner';
-import { Repository } from 'src/app/model/repository';
+import { Repository } from 'src/app/model/Repository';
 @Component({
   selector: 'app-repositorios',
   templateUrl: './repositorios.component.html',

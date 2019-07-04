@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { RepositoriosService } from 'src/app/services/repositorios.service';
 import { Owner } from 'src/app/model/Owner';
-import { Repository } from 'src/app/model/repository';
+import { Repository } from 'src/app/model/Repository';
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-find',
