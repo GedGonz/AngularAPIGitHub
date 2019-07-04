@@ -14,7 +14,6 @@ export class RepositoriosService {
 
   getOwner(name: string): Observable<Owner> {
     const url = `https://api.github.com/users/${name}`;
-    // console.log('URL: ' + url);
     return this.http.get<Owner>(url);
   }
   getRepositorio(name: string): Observable<Repository[]> {

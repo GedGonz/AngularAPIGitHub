@@ -20,9 +20,8 @@ export class FindComponent implements OnInit {
   owner: EventEmitter<Owner> = new EventEmitter<Owner>();
   @Output()
   repositories: EventEmitter<Repository[]> = new EventEmitter<Repository[]>();
-// @Output() textoescrito: EventEmitter<string> = new EventEmitter<string>();
 
-finRepository(texto) {
+  finRepository(texto) {
   this.servicioRepo.getOwner(texto).subscribe((resp) => {
       this.owner.emit(resp);
       this.eroor.emit(false);
