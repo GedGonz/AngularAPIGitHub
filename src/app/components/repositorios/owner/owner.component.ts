@@ -13,17 +13,7 @@ export class OwnerComponent implements OnInit {
 
 
   constructor(private servicioRepo: RepositoriosService) {
-   /* this.servicioRepo.getOwner(this.texto)
-    .subscribe((resp: Owner) => this.owner = {
-    login: resp.login,
-    name: resp.name,
-    avatar_url: resp.avatar_url,
-    location: resp.location,
-    created_at: resp.created_at,
-    updated_at: resp.updated_at
-   });
-    console.log(this.owner);
-    */
+
    }
 
   ngOnInit() {
