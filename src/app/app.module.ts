@@ -11,6 +11,7 @@ import { RepositoriosService } from './services/repositorios.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FindComponent } from './components/repositorios/find/find.component';
 import { NotfoundComponent } from './components/repositorios/notfound/notfound.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NotfoundComponent } from './components/repositorios/notfound/notfound.c
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFontAwesomeModule
   ],
   providers: [RepositoriosService],
   bootstrap: [AppComponent]
