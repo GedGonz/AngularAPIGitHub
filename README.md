@@ -14,4 +14,4 @@ Node 10.15.0
 
 npm 6.4.1
 
- [WebPageApp](https://consulgithub.herokuapp.com/)
+ [WebPageApp](https://appfindrepository.herokuapp.com/)
