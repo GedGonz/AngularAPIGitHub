@@ -1,14 +1,27 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>APIRepositorios</title>
-  <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<head>
+    <meta charset="utf-8">
+    <title>APIRepositorios</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
-  <app-root></app-root>
+    <app-root></app-root>
 </body>
+
+<div class="footer shadow">
+    <p class="text-center paddin2em parrafo">Copyright © <span id="anio"></span> by GedGonz </p>
+</div>
+
 </html>
+
+<script>
+    let anio = new Date().getFullYear();
+    let _anio = document.querySelector("#anio");
+    _anio.innerHTML = anio;
+</script>
