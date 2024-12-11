@@ -1,0 +1,42 @@
+name: build Angular
+run-name: build Angular
+
+on:
+  workflow_dispatch:
+env:
+  version-node: '3.1'
+
+concurrency:                  #Para evitar que se ejecuten en paralelos mas de un runner y detenerlo si existe un runner nuevo
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout del repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Configurar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '10.15.0' 
+
+      # 3. Instalar dependencias
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Construir el proyecto
+      - name: Build Angular project
+        run: npm run build -- --configuration production
+
+      # 5. Guardar artefactos del build
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-folder
+          path: dist/
